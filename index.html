@@ -7,14 +7,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Dischead jockeys Form</title>
     <link rel="stylesheet" href="./style.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-    <script type="text/javascript" src="jquery/relcopy.jquery.js"></script>
-    <script>
-        $(function(){
-            var removeLink = ' <button class="remove" href="#" onclick="$(this).parent().remove(); return false">remove</button>';
-            $('button.copy').relCopy({append: removeLink});
-          });
-    </script>
 </head>
 
 <body>
@@ -22,48 +14,103 @@
         <h1>Dischead Replay Set Info</h1>
         <form>
             <label for="performer">Performer Name:</label><br>
-            <input type="text" id="performer" name="performer"><br>
+            <input type="text" id="performer" name="performer" oninput="embedname()"><br>
             <label for="set">Dischead Jockeys Set Number:</label><br>
-            <input type="text" id="set" name="set"><br>
+            <input type="text" id="set" name="set" oninput="embednumber()"><br>
             <label for="color">Embed Color:</label>
-            <input type="color" id="color" name="color" value="#"><br>
+            <input type="color" id="color" name="color" value="#5865F2" oninput="embedcolor()"><br>
 
             <!-- tracks -->
-            <br><button href="#" rel=".trackembed" class="copy">Add Track</button>
-            <div class="trackembed">
-                <div class="trackwrap">
-                    <fieldset style="display: inline-block;" class="track">
-                        <legend>track:</legend>
-                        <label for="title">Title:</label><br>
-                        <input type="text" id="title" name="title" onchange="titledashartist()"><br>
-                        <label for="artist">Artist:</label><br>
-                        <input type="text" id="artist" name="artist"><br>
-                        <label for="timestamp">Timestamp (mm:ss):</label><br>
-                        <input type="text" id="timestamp" name="timestamp" pattern="([0-5][0-9]:[0-5][0-9])" value="00:00"><br>
-                    </fieldset>
+            <br><button type="button" onclick="newtrack()">Add Track</button>
+            <div id="container">
+                <div class="trackembed">
+                    <div class="trackwrap">
+                        <fieldset style="display: inline-block;" class="track">
+                            <legend>track:</legend>
+                            <label for="track[1][title]">Title:</label><br>
+                            <input type="text" name="track[1][title]" class="title" oninput="titledashartist(this)"><br>
+                            <label for="track[1][artist]">Artist:</label><br>
+                            <input type="text" class="artist" name="track[1][artist]" oninput="titledashartist(this)"><br>
+                            <label for="track[1][timestamp]">Timestamp (mm:ss):</label><br>
+                            <input type="text" name="track[1][timestamp]" pattern="([0-5][0-9]:[0-5][0-9])" value="00:00"><br>
+                        </fieldset>
 
 
+                    </div>
+                    
+                    <div style="display: inline-block;" class="embed" name="embeded">
+                        <p class="embedtitle">
+                            <span class="np">Now playing:</span>
+                            <span class="titleobj" name="embed[1][titleobj]">artist - title</span>
+                        </p>
+                        <p class="embeddesc">
+                            <span class="dj set">Dischead Jockeys </span>
+                            <span class="djnum" name="djnumname">1.1</span>
+                            <span class="by"> preformed by </span>
+                            <span class="descobj" name="performername">Preformer</span>
+                        </p>
+                    <br>
+                    </div>
                 </div>
-                
-                <div style="display: inline-block;" class="embed">
-                    <p class="embedtitle">
-                        <span class="np">Now playing:</span>
-                        <span class="titleobj">nerd</span>
-                    </p>
-                    <p class="embeddesc">
-                        <span class="dj set">Dischead Jockeys </span>
-                        <span class="djnum">3.8</span>
-                        <span class="by"> preformed by </span>
-                        <span class="descobj">Toxin_X</span>
-                    </p>
-                <br>
-                </div>
+
                 <script>
-                    function titledashartist() {
-                        let inputTitle = document.getElementById("title").value;
-                        let inputArtist = document.getElementById("artist").value;
-                        document.getElementById(title).textContent = (inputTitle + " - " + inputArtist);
-                    }
+                    let i = 2;
+                    function newtrack() {
+                        let template = `                <div class="trackembed">
+                            <div class="trackwrap">
+                                <fieldset style="display: inline-block;" class="track">
+                                    <legend>track:</legend>
+                                    <label for="track[${i}][title]">Title:</label><br>
+                                    <input type="text" name="track[${i}][title]" class="title" oninput="titledashartist(this)"><br>
+                                    <label for="track[${i}][artist]">Artist:</label><br>
+                                    <input type="text" class="artist" name="track[${i}][artist]" oninput="titledashartist(this)"><br>
+                                    <label for="track[${i}][timestamp]">Timestamp (mm:ss):</label><br>
+                                    <input type="text" name="track[${i}][timestamp]" pattern="([0-5][0-9]:[0-5][0-9])" value="00:00"><br>
+                                </fieldset>
+        
+        
+                            </div>
+                            
+                            <div style="display: inline-block;" class="embed" name="embeded">
+                                <p class="embedtitle">
+                                    <span class="np">Now playing:</span>
+                                    <span class="titleobj" name="embed[${i}][titleobj]">artist - title</span>
+                                </p>
+                                <p class="embeddesc">
+                                    <span class="dj set">Dischead Jockeys </span>
+                                    <span class="djnum" name="djnumname">1.1</span>
+                                    <span class="by"> preformed by </span>
+                                    <span class="descobj" name="performername">Preformer</span>
+                                </p>
+                            <br>
+                            </div>`;
+                    
+                        let container = document.getElementById('container');
+                        let div = document.createElement('div');
+                        div.innerHTML = template;
+                        container.appendChild(div);
+                    
+                        i++;
+                    };
+                    function titledashartist(obj) {
+                        n = obj.name.match(/[0-9]+/g);
+                        titleartist = (document.getElementsByName(`track[${n}][artist]`)[0].value + ` - ` + document.getElementsByName(`track[${n}][title]`)[0].value);
+                        document.getElementsByName(`embed[${n}][titleobj]`)[0].textContent=titleartist;
+                        
+                    };
+                    function embednumber() {
+                        var djna = document.getElementsByName("djnumname");
+                        for (var i=0;djna.length;i++) {djna[i].textContent=document.getElementsByName(`set`)[0].value};
+                    };
+
+                    function embedname() {
+                        var pname = document.getElementsByName("performername");
+                        for (var i=0;pname.length;i++) {pname[i].textContent=document.getElementsByName(`performer`)[0].value};
+                    };
+                    function embedcolor() {
+                        var col = document.getElementsByName("embeded");
+                        for (var i=0;col.length;i++) {col[i].style.borderColor=document.getElementsByName(`color`)[0].value};
+                    };
                 </script>
             </div>
             <input type="submit" class="submit">
