@@ -13,15 +13,18 @@
     <main>
         <h1>Dischead Replay Set Info</h1>
         <form>
-            <label for="performer">Performer Name:</label><br>
-            <input type="text" id="performer" name="performer" oninput="embedname()"><br>
-            <label for="set">Dischead Jockeys Set Number:</label><br>
-            <input type="text" id="set" name="set" oninput="embednumber()"><br>
-            <label for="color">Embed Color:</label>
-            <input type="color" id="color" name="color" value="#5865F2" oninput="embedcolor()"><br>
+                <label for="performer">Performer Name:</label><br>
+                <input type="text" id="performer" name="performer" oninput="embedname()"><br>
+                <label for="set">Dischead Jockeys Set Number:</label><br>
+                <input type="text" name="set" oninput="embednumber()"><br>
+                <label for="color">Embed Color:</label>
+                <input type="color" name="color" value="#5865F2" oninput="embedcolor()"><br>
+            
+
 
             <!-- tracks -->
-            <br><button type="button" onclick="newtrack()">Add Track</button>
+            <br><button type="button" onclick="newtrack()" style="margin:10px;">Add Track</button>
+            <br>
             <div id="container">
                 <div class="trackembed">
                     <div class="trackwrap">
@@ -35,9 +38,8 @@
                             <input type="text" name="track[1][timestamp]" pattern="([0-5][0-9]:[0-5][0-9])" value="00:00"><br>
                         </fieldset>
 
-
                     </div>
-                    
+
                     <div style="display: inline-block;" class="embed" name="embeded">
                         <p class="embedtitle">
                             <span class="np">Now playing:</span>
@@ -49,7 +51,7 @@
                             <span class="by"> preformed by </span>
                             <span class="descobj" name="performername">Preformer</span>
                         </p>
-                    <br>
+                        <br>
                     </div>
                 </div>
 
@@ -112,8 +114,84 @@
                         for (var i=0;col.length;i++) {col[i].style.borderColor=document.getElementsByName(`color`)[0].value};
                     };
                 </script>
+
             </div>
-            <input type="submit" class="submit">
+            <fieldset class="socials" style="float: left; height: auto;">
+                <legend>Socials: (optional)</legend>
+                <label for="setlink">Set Link:</label>
+                <input type="text" id="setlink" name="setlink"><br>
+                
+                <label for="website">Website:</label>
+                <input type="text" id="website" name="website"><br>
+
+                <label for="apple">apple music:</label>
+                <input type="text" id="apple" name="apple"><br>
+                
+                <label for="discord">discord:</label>
+                <input type="text" id="discord" name="discord"><br>
+                
+                <label for="instagram">instagram:</label>
+                <input type="text" id="instagram" name="instagram"><br>
+
+                <label for="mastodon">mastodon:</label>
+                <input type="text" id="mastodon" name="mastodon"><br>
+
+                <label for="soundcloud">soundcloud:</label>
+                <input type="text" id="soundcloud" name="soundcloud"><br>
+
+                <label for="spotify">spotify:</label>
+                <input type="text" id="spotify" name="spotify"><br>
+                
+                
+                <label for="tiktok">tiktok:</label>
+                <input type="text" id="tiktok" name="tiktok"><br>
+                
+                <label for="twitch">twitch:</label>
+                <input type="text" id="twitch" name="twitch"><br>
+
+                <label for="twitter">twitter:</label>
+                <input type="text" id="twitter" name="twitter"><br>
+                
+                <label for="youtube">youtube:</label>
+                <input type="text" id="youtube" name="youtube"><br>
+                
+                
+                
+                
+
+                
+                
+
+            </fieldset>
+            <br>
+            
+            <input type="submit" class="submit" style="float: left;">
+            <a id="downloadAnchorElem" style="display:none"></a>
+
+            <script>
+                function handleSubmit(event) {
+                    event.preventDefault();
+                
+                    const data = new FormData(event.target);
+                
+                   const value = JSON.stringify(Object.fromEntries(data.entries()));
+                
+                    console.log({ value });
+                    
+                    var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(value));
+                    var dlAnchorElem = document.getElementById('downloadAnchorElem');
+                    dlAnchorElem.setAttribute("href",     dataStr     );
+                    dlAnchorElem.setAttribute("download", document.getElementsByName(`performer`)[0].value + " - " + "document.getElementsByName(`set`)[0].value" + ".json");
+                    dlAnchorElem.click();
+                    console.log(dataStr);
+                    console.log(dlAnchorElem);
+
+                  };
+                
+                  
+                  const form = document.querySelector('form');
+                  form.addEventListener('submit', handleSubmit);
+            </script>
         </form>
 
     </main>
