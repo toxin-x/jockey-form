@@ -2,6 +2,9 @@ body {
     background-color: #313338;
     color: #ffffff;
     font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 fieldset {
@@ -9,8 +12,6 @@ fieldset {
     border-radius: 10px;
     width: 300px;
     float: left;
-    display: inline-block;
-    height: 180px;
 }
 
 input {
@@ -45,25 +46,32 @@ a {
 button, .submit {
     background-color: white;
     color: black;
+    float: left;
+    width: -moz-fit-content;
+    width: fit-content;
 }
 
 
 .trackembed {
-    height: 200px;
-    margin-bottom:20px;
+    height: auto;
+    margin-top:10px;
+    margin-bottom:10px;
 
 }
 
 .embed {
-    height: 200px;
+    height: 175px;
     color: white;
     background-color: #2b2d31;
     margin-left: 15px;
+    margin-top: 10px;
     width:300px;
+    margin-bottom:10px;
     border-radius: 4px;
     border: solid 0px;
     border-left-width: 4px;
     border-color: #5865F2;
+    display: inline-block; 
 }
 
 
@@ -71,12 +79,33 @@ button, .submit {
 
     padding-left: 12px;
 }
-.remove {
-
-}
 
 .submit {
     margin-top: 10px;
     margin-left: 10px;
+    position: relative;
+}
+
+ .flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+} 
+
+.info, .socials {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.socials {
+    height: auto;
+}
+
+.info { height: 150px;
+width: 328px;}
+
+#example1 { 
+    display: inline-block;
+    margin-top: 10px;
     
 }
