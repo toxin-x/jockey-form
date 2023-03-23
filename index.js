@@ -3,20 +3,20 @@ let tracki = 2;
 function newtrack() {
     let template = `                <div class="trackembed">
         <div class="trackwrap">
-            <fieldset style="display: inline-block;" class="track">
-                <legend>track:</legend>
+            <fieldset class="track">
+                <legend>track ${tracki}:</legend>
                 <label for="track[${tracki}][title]">Title:</label><br>
                 <input type="text" name="track[${tracki}][title]" id="track[${tracki}][title]" class="title" oninput="titledashartist(this)"><br>
                 <label for="track[${tracki}][artist]">Artist:</label><br>
                 <input type="text" class="artist" name="track[${tracki}][artist]" id="track[${tracki}][artist]"  oninput="titledashartist(this)"><br>
                 <label for="track[${tracki}][timestamp]">Timestamp (mm:ss):</label><br>
-                <input type="text" name="track[${tracki}][timestamp]" id="track[${tracki}][artist]" pattern="([0-5][0-9]:[0-5][0-9])"><br>
+                <input type="text" name="track[${tracki}][timestamp]" id="track[${tracki}][artist]" pattern="([0-5][0-9]:[0-5][0-9])" placeholder="00:00" title="Must be in mm:ss format"><br>
             </fieldset>
 
 
         </div>
         
-        <div style="display: inline-block;" class="embed" name="embeded">
+        <div class="embed" name="embeded">
             <p class="embedtitle">
                 <span class="np">Now playing:</span>
                 <span class="titleobj" name="embed[${tracki}][titleobj]">artist - title</span>
@@ -36,7 +36,7 @@ function newtrack() {
     container.appendChild(div);
     embedcolor();
     embedname();
-    embedcolor();
+    embednumber();
 
     tracki++;
 };
