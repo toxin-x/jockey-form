@@ -83,6 +83,7 @@ function handleSubmit(event) {
     var dataent = (Object.fromEntries(data.entries()));
     var dataex = {};
     var dataobj = Object.keys(dataent);
+    var builtdict ={}
 
 
     {
@@ -96,11 +97,11 @@ function handleSubmit(event) {
                 var valu = dataent[dataobj[j]];
                 var newKey = key.split('[')[1].split(']')[0];
                 var newSubKey = key.split('[')[2].split(']')[0];
-                if (dataex[newKey] == undefined) {
-                    dataex[newKey] = {};
+                if (builtdict[newKey] == undefined) {
+                    builtdict[newKey] = {};
                 };
-                dataex[newKey][newSubKey] = valu;
-                   dataex.track = dataobj[j];
+                builtdict[newKey][newSubKey] = valu;
+                
 
             } else 
             {
@@ -110,7 +111,7 @@ function handleSubmit(event) {
         };
     };
 
-
+dataex["tracks"] = builtdict;
 
     const value2 = JSON.stringify(dataex, null, 2);
     var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(value2);
