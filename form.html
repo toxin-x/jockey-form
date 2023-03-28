@@ -17,11 +17,11 @@
             <fieldset class="info">
                 <legend>Info</legend>
                 <label for="performer">Performer Name:</label><br>
-                <input type="text" id="performer" name="performer" oninput="embedname()"><br>
+                <input type="text" id="performer" name="performer" oninput="embedname()" required><br>
                 <label for="set">Dischead Jockeys Set Number:</label><br>
                 <input type="text" name="set" id="set" oninput="embednumber()"><br>
                 <label for="date">Original Air Date:</label>
-                <input type="date" name="date" id="date"><br>
+                <input type="date" name="date" id="date" required>
                 <label for="color">Embed Color:</label>
                 <input type="color" name="color" id="color" value="#5865F2" oninput="embedcolor()">
                 
@@ -51,7 +51,7 @@
                     <label for="apple">apple music:</label><br>
                     <input type="text" id="apple" name="apple" placeholder="http://example.com" title="Must be a valid URL that starts with http:// or https:/" pattern="https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)" ><br>
                     
-                    <label for="discord">discord:</label><br>
+                    <label for="discord">discord server:</label><br>
                     <input type="text" id="discord" name="discord" placeholder="http://example.com" title="Must be a valid URL that starts with http:// or https:/" pattern="https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)" ><br>
                     
                     <label for="instagram">instagram:</label><br>
@@ -89,11 +89,11 @@
                         <fieldset class="track">
                             <legend>track 1:</legend>
                             <label for="track[1][title]">Title:</label><br>
-                            <input type="text" name="track[1][title]" id="track[1][title]" class="title" oninput="titledashartist(this)"><br>
+                            <input type="text" name="track[1][title]" id="track[1][title]" class="title" oninput="titledashartist(this)" required><br>
                             <label for="track[1][artist]">Artist:</label><br>
-                            <input type="text" class="artist" name="track[1][artist]" id="track[1][artist]" oninput="titledashartist(this)"><br>
+                            <input type="text" class="artist" name="track[1][artist]" id="track[1][artist]" oninput="titledashartist(this)" required><br>
                             <label for="track[1][timestamp]">Timestamp (mm:ss):</label><br>
-                            <input type="text" name="track[1][timestamp]" id="track[1][timestamp]" pattern="([0-5][0-9]:[0-5][0-9])" value="00:00" placeholder="00:00" title="Must be in mm:ss format"><br>
+                            <input type="text" name="track[1][timestamp]" id="track[1][timestamp]" pattern="([0-5][0-9]:[0-5][0-9])" value="00:00" placeholder="00:00" title="Must be in mm:ss format" required><br>
                         </fieldset>
 
                     <div class="embed" name="embeded">
