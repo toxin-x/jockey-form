@@ -5,10 +5,11 @@ function newtrack() {
         <div class="trackwrap">
             <fieldset class="track">
                 <legend>track ${tracki}:</legend>
-                <label for="track[${tracki}][title]">Title:</label><br>
-                <input type="text" name="track[${tracki}][title]" id="track[${tracki}][title]" class="title" oninput="titledashartist(this)" required><br>
+
                 <label for="track[${tracki}][artist]">Artist:</label><br>
                 <input type="text" class="artist" name="track[${tracki}][artist]" id="track[${tracki}][artist]"  oninput="titledashartist(this) required"><br>
+                <label for="track[${tracki}][title]">Title:</label><br>
+                <input type="text" name="track[${tracki}][title]" id="track[${tracki}][title]" class="title" oninput="titledashartist(this)" required><br>
                 <label for="track[${tracki}][timestamp]">Timestamp (mm:ss):</label><br>
                 <input type="text" name="track[${tracki}][timestamp]" id="track[${tracki}][artist]" pattern="([0-5][0-9]:[0-5][0-9])" placeholder="00:00" title="Must be in mm:ss format" required><br>
             </fieldset>
