@@ -51,9 +51,6 @@
                     <label for="apple">apple music:</label><br>
                     <input type="text" id="apple" name="apple" placeholder="http://example.com" title="Must be a valid URL that starts with http:// or https:/" pattern="https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)" ><br>
                     
-                    <label for="discord">discord server:</label><br>
-                    <input type="text" id="discord" name="discord" placeholder="http://example.com" title="Must be a valid URL that starts with http:// or https:/" pattern="https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)" ><br>
-                    
                     <label for="instagram">instagram:</label><br>
                     <input type="text" id="instagram" name="instagram" placeholder="http://example.com" title="Must be a valid URL that starts with http:// or https:/" pattern="https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)" ><br>
     
@@ -88,11 +85,11 @@
                 <div class="trackembed">
                         <fieldset class="track">
                             <legend>track 1:</legend>
+                            <input type="text" class="artist" name="track[1][artist]" id="track[1][artist]" oninput="titledashartist(this)" required><br>
+                            <label for="track[1][timestamp]">Timestamp (mm:ss):</label><br>
                             <label for="track[1][title]">Title:</label><br>
                             <input type="text" name="track[1][title]" id="track[1][title]" class="title" oninput="titledashartist(this)" required><br>
                             <label for="track[1][artist]">Artist:</label><br>
-                            <input type="text" class="artist" name="track[1][artist]" id="track[1][artist]" oninput="titledashartist(this)" required><br>
-                            <label for="track[1][timestamp]">Timestamp (mm:ss):</label><br>
                             <input type="text" name="track[1][timestamp]" id="track[1][timestamp]" pattern="([0-5][0-9]:[0-5][0-9])" value="00:00" placeholder="00:00" title="Must be in mm:ss format" required><br>
                         </fieldset>
 
