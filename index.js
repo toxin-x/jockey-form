@@ -118,7 +118,7 @@ dataex["tracks"] = builtdict;
     var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(value2);
     var dlAnchorElem = document.getElementById('downloadAnchorElem');
     dlAnchorElem.setAttribute("href",     dataStr     );
-    dlAnchorElem.setAttribute("download", document.getElementsByName(`performer`)[0].value + "-" + document.getElementsByName(`set`)[0].value + ".json");
+    dlAnchorElem.setAttribute("download", document.getElementsByName(`set`)[0].value + "-" + document.getElementsByName(`performer`)[0].value + ".json");
     dlAnchorElem.click();
 
 };
