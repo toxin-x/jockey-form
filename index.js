@@ -92,7 +92,18 @@ function handleSubmit(event) {
         for (var j = 0; j < dataobj.length; j++) 
         
         {
-            if (dataobj[j].startsWith("track")) 
+            if (dataobj[j].startsWith("socials"))
+            {
+                var key = Object.keys(dataent)[j];
+                var valu = dataent[dataobj[j]];
+                var newKey = key.split('[')[1].split(']')[0];
+                if (builtdict["socials"] == undefined) {
+                    builtdict["socials"] = {};
+                };
+                builtdict["socials"][newKey] = valu
+
+            } 
+            else if (dataobj[j].startsWith("track")) 
             {
                 var key = Object.keys(dataent)[j];
                 var valu = dataent[dataobj[j]];
