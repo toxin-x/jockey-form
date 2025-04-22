@@ -13,19 +13,19 @@
     <main>
         <h1>Dischead Replay Set Info</h1>
         <form class="flex">
-            <div> 
-            <fieldset class="info">
-                <legend>Info</legend>
-                <label for="performer">Performer Name:</label><br>
-                <input type="text" id="performer" name="performer" oninput="embedname()" required><br>
-                <label for="set">Dischead Jockeys Night Number:</label><br>
-                <input type="text" name="set" id="set" oninput="embednumber()"><br>
-                <label for="date">Original Air Date:</label>
-                <input type="date" name="date" id="date" required>
-                <label for="color">Embed Color:</label>
-                <input type="color" name="color" id="color" value="#5865F2" oninput="embedcolor()">
-                
-            </fieldset>
+            <div>
+                <fieldset class="info">
+                    <legend>Info</legend>
+                    <label for="performer">Performer Name:</label><br>
+                    <input type="text" id="performer" name="performer" oninput="embedname()" required><br>
+                    <label for="set">Dischead Jockeys Night Number:</label><br>
+                    <input type="text" name="set" id="set" oninput="embednumber()"><br>
+                    <label for="date">Original Air Date:</label>
+                    <input type="date" name="date" id="date" required>
+                    <label for="color">Embed Color:</label>
+                    <input type="color" name="color" id="color" value="#5865F2" oninput="embedcolor()">
+
+                </fieldset>
                 <div class="embed" name="embeded" id="example1">
                     <p class="embedtitle">
                         <span class="np">Now playing:</span>
@@ -36,82 +36,118 @@
                         <span class="djnum" name="djnumname">1.1</span>
                         <span class="by"> performed by </span>
                         <span class="descobj" name="performername">performer</span>
-                    </p> 
+                    </p>
                 </div>
             </div>
-                     
-                <fieldset class="socials">
-                    <legend>Socials: (optional)</legend>
-                    <label for="socials[setlink]">Set Link:</label><br>
-                    <input type="text" id="socials[setlink]" name="socials[setlink]"  placeholder="http://example.com" title="Must be a valid URL that starts with http:// or https:/" pattern="https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)" ><br>
-                    
-                    <label for="socials[website]">Website:</label><br>
-                    <input type="text" id="socials[website]" name="socials[website]" placeholder="http://example.com" title="Must be a valid URL that starts with http:// or https:/" pattern="https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)" ><br>
-    
-                    <label for="socials[apple]">apple music:</label><br>
-                    <input type="text" id="socials[apple]" name="socials[apple]" placeholder="http://example.com" title="Must be a valid URL that starts with http:// or https:/" pattern="https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)" ><br>
-                    
-                    <label for="socials[instagram]">instagram:</label><br>
-                    <input type="text" id="socials[instagram]" name="socials[instagram]" placeholder="http://example.com" title="Must be a valid URL that starts with http:// or https:/" pattern="https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)" ><br>
-    
-                    <label for="socials[mastodon]">mastodon:</label><br>
-                    <input type="text" id="socials[mastodon]" name="socials[mastodon]" placeholder="http://example.com" title="Must be a valid URL that starts with http:// or https:/" pattern="https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)" ><br>
-    
-                    <label for="socials[soundcloud]">soundcloud:</label><br>
-                    <input type="text" id="socials[soundcloud]" name="socials[soundcloud]" placeholder="http://example.com" title="Must be a valid URL that starts with http:// or https:/" pattern="https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)" ><br>
-    
-                    <label for="socials[spotify]">spotify:</label><br>
-                    <input type="text" id="socials[spotify]" name="socials[spotify]" placeholder="http://example.com" title="Must be a valid URL that starts with http:// or https:/" pattern="https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)" ><br>
-                    
-                    
-                    <label for="socials[tiktok]">tiktok:</label><br>
-                    <input type="text" id="socials[toktok]" name="socials[tiktok]" placeholder="http://example.com" title="Must be a valid URL that starts with http:// or https:/" pattern="https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)" ><br>
-                    
-                    <label for="socials[twitch]">twitch:</label><br>
-                    <input type="text" id="socials[twitch]" name="socials[twitch]" placeholder="http://example.com" title="Must be a valid URL that starts with http:// or https:/" pattern="https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)" ><br>
-    
-                    <label for="socials[twitter]">twitter:</label><br>
-                    <input type="text" id="socials[twitter]" name="socials[twitter]" placeholder="http://example.com" title="Must be a valid URL that starts with http:// or https:/" pattern="https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)" ><br>
-                    
-                    <label for="socials[youtube]">youtube:</label><br>
-                    <input type="text" id="socials[youtube]" name="socials[youtube]" placeholder="http://example.com" title="Must be a valid URL that starts with http:// or https:/" pattern="https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)" ><br>
 
-                </fieldset>
+            <fieldset class="socials">
+                <legend>Socials: (optional)</legend>
+                <label for="socials[setlink]">Set Link:</label><br>
+                <input type="text" id="socials[setlink]" name="socials[setlink]" placeholder="http://example.com"
+                    title="Must be a valid URL that starts with http:// or https:/"
+                    pattern="https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)"><br>
+
+                <label for="socials[website]">Website:</label><br>
+                <input type="text" id="socials[website]" name="socials[website]" placeholder="http://example.com"
+                    title="Must be a valid URL that starts with http:// or https:/"
+                    pattern="https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)"><br>
+
+                <label for="socials[apple]">apple music:</label><br>
+                <input type="text" id="socials[apple]" name="socials[apple]" placeholder="http://example.com"
+                    title="Must be a valid URL that starts with http:// or https:/"
+                    pattern="https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)"><br>
+
+                <label for="socials[bluesky]">bluesky:</label><br>
+                <input type="text" id="socials[bluesky]" name="socials[bluesky]" placeholder="http://example.com"
+                    title="Must be a valid URL that starts with http:// or https:/"
+                    pattern="https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)"><br>
+
+                <label for="socials[instagram]">instagram:</label><br>
+                <input type="text" id="socials[instagram]" name="socials[instagram]" placeholder="http://example.com"
+                    title="Must be a valid URL that starts with http:// or https:/"
+                    pattern="https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)"><br>
+
+                <label for="socials[mastodon]">mastodon:</label><br>
+                <input type="text" id="socials[mastodon]" name="socials[mastodon]" placeholder="http://example.com"
+                    title="Must be a valid URL that starts with http:// or https:/"
+                    pattern="https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)"><br>
+
+                <label for="socials[soundcloud]">soundcloud:</label><br>
+                <input type="text" id="socials[soundcloud]" name="socials[soundcloud]" placeholder="http://example.com"
+                    title="Must be a valid URL that starts with http:// or https:/"
+                    pattern="https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)"><br>
+
+                <label for="socials[spotify]">spotify:</label><br>
+                <input type="text" id="socials[spotify]" name="socials[spotify]" placeholder="http://example.com"
+                    title="Must be a valid URL that starts with http:// or https:/"
+                    pattern="https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)"><br>
+
+
+                <label for="socials[tiktok]">tiktok:</label><br>
+                <input type="text" id="socials[toktok]" name="socials[tiktok]" placeholder="http://example.com"
+                    title="Must be a valid URL that starts with http:// or https:/"
+                    pattern="https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)"><br>
+
+                <label for="socials[twitch]">twitch:</label><br>
+                <input type="text" id="socials[twitch]" name="socials[twitch]" placeholder="http://example.com"
+                    title="Must be a valid URL that starts with http:// or https:/"
+                    pattern="https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)"><br>
+
+                <label for="socials[twitter]">twitter:</label><br>
+                <input type="text" id="socials[twitter]" name="socials[twitter]" placeholder="http://example.com"
+                    title="Must be a valid URL that starts with http:// or https:/"
+                    pattern="https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)"><br>
+
+                <label for="socials[youtube]">youtube:</label><br>
+                <input type="text" id="socials[youtube]" name="socials[youtube]" placeholder="http://example.com"
+                    title="Must be a valid URL that starts with http:// or https:/"
+                    pattern="https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)"><br>
+
+            </fieldset>
 
             <!-- tracks -->
             <div class="tracksblock">
-            <div id="container">
-                <div class="trackembed">
+                <div id="container">
+                    <div class="trackembed">
                         <fieldset class="track">
                             <legend>track 1:</legend>
                             <label for="track[1][artist]">Artist:</label><br>
-                            <input type="text" class="artist" name="track[1][artist]" id="track[1][artist]" oninput="titledashartist(this)" required><br>
+                            <input type="text" class="artist" name="track[1][artist]" id="track[1][artist]"
+                                oninput="titledashartist(this)" required><br>
                             <label for="track[1][title]">Title:</label><br>
-                            <input type="text" name="track[1][title]" id="track[1][title]" class="title" oninput="titledashartist(this)" required><br>
+                            <input type="text" name="track[1][title]" id="track[1][title]" class="title"
+                                oninput="titledashartist(this)" required><br>
                             <label for="track[1][timestamp]">Timestamp (mm:ss):</label><br>
-                            <input type="text" name="track[1][timestamp]" id="track[1][timestamp]" pattern="([0-5][0-9]:[0-5][0-9])" value="00:00" placeholder="00:00" title="Must be in mm:ss format" required><br>
+                            <input type="text" name="track[1][timestamp]" id="track[1][timestamp]"
+                                pattern="([0-5][0-9]:[0-5][0-9])" value="00:00" placeholder="00:00"
+                                title="Must be in mm:ss format" required><br>
                         </fieldset>
 
-                    <div class="embed" name="embeded">
-                        <p class="embedtitle">
-                            <span class="np">Now playing:</span>
-                            <span class="titleobj" name="embed[1][titleobj]">artist - title</span>
-                        </p>
-                        <p class="embeddesc">
-                            <span class="dj set">Dischead Jockeys </span>
-                            <span class="djnum" name="djnumname">1.1</span>
-                            <span class="by"> performed by </span>
-                            <span class="descobj" name="performername">performer</span>
-                        </p>
-                        <br>
+                        <div class="embed" name="embeded">
+                            <p class="embedtitle">
+                                <span class="np">Now playing:</span>
+                                <span class="titleobj" name="embed[1][titleobj]">artist - title</span>
+                            </p>
+                            <p class="embeddesc">
+                                <span class="dj set">Dischead Jockeys </span>
+                                <span class="djnum" name="djnumname">1.1</span>
+                                <span class="by"> performed by </span>
+                                <span class="descobj" name="performername">performer</span>
+                            </p>
+                            <br>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-<br><button type="button" onclick="newtrack()">Add Track</button><br>
-<input type="submit" class="submit" value="Submit"><br>
+            <br><button type="button" onclick="newtrack()">Add Track</button><br>
+            <br>
+            <div>
+                <label for="playonradio">I would like this to play on Dischead Jockeys Radio</label> <input type="checkbox" checked id="playonradio"> 
+            </div>
+            <br>
+            <input type="submit" class="submit" value="Submit"><br>
         </form>
-            <a id="downloadAnchorElem"></a>
+        <a id="downloadAnchorElem"></a>
 
 
 
